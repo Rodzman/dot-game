@@ -66,3 +66,7 @@ export const isWin = (board: number[][], row: number, col: number) => {
    testWin(horizontal) || // did win horizontally
    testWin(diagonalLeftToRight) || testWin(diagonalRightToLeft); // did win diagonally
 }
+
+export const isTie = (board: number[][]) => {
+  return board.every((col) => col.length === boardRows);
+}
