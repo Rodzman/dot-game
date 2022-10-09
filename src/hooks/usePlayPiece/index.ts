@@ -1,8 +1,7 @@
 import { boardRows } from "const";
 import { useRecoilState } from "recoil";
 import { boardState, gameOverState, playerState } from "state";
-
-const testWin = (arr: number[]): boolean => /1{4}|2{4}/.test(arr.join(""));
+import { isWin } from "./utils";
 
 const usePlayPiece = () => {
   const [board, setBoard] = useRecoilState(boardState);
@@ -28,9 +27,7 @@ const usePlayPiece = () => {
     const row = newBoard[col].length - 1;
 
     if (
-      testWin(newBoard[col]) || // Did win vertically
-      testWin(newBoard.map((col) => col[row] || 0)) // Did win horizontally
-      // TODO: Did win diagonally
+      isWin(newBoard, row, col) // Did win vertically, horizontally or diagonally
     ) {
       setGameOver(true);
     } else {
