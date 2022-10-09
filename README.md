@@ -15,7 +15,7 @@ We have created a very simple Connect 4 game using some of our favorite [front-e
 - Persist game state between sessions (hint - <https://recoiljs.org/docs/guides/atom-effects#local-storage-persistence>)
 - Record and present game stats
 - Allow players to select their name and color
-- Play againt a bot
+- Play against a bot
 - Increase unit test coverage
 - Add end-to-end tests
 - UX improvements
