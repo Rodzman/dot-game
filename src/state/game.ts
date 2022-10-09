@@ -1,6 +1,6 @@
 import { boardCols } from "const";
 import { atom } from "recoil";
-import { Board, Player } from "types";
+import { Board, GameStats, GameResult, Player } from "types";
 import { localStorageEffect } from "./utils";
 
 export const boardState = atom<Board>({
@@ -24,5 +24,26 @@ export const gameOverState = atom<boolean>({
   default: false,
   effects: [
     localStorageEffect('gameOverState'),
+  ]
+});
+
+export const gameResultState = atom<GameResult>({
+  key: "gameResult",
+  default: null,
+  effects: [
+    localStorageEffect('gameResult'),
+  ]
+});
+
+export const gameStatsState = atom<GameStats>({
+  key: "gameStats",
+  default: {
+    1: 0,
+    2: 0,
+    ties: 0,
+    totals: 0
+  },
+  effects: [
+    localStorageEffect('gameStats'),
   ]
 });
