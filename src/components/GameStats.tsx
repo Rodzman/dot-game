@@ -1,4 +1,4 @@
-import { Heading, List, ListItem, Box, Text } from "@chakra-ui/react";
+import { Heading, Box, Text } from "@chakra-ui/react";
 import { playerName } from "const";
 import { FC } from "react";
 import { useRecoilValue } from "recoil";
